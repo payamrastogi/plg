@@ -56,7 +56,7 @@ public class TweetsWriter
 			bos.write(("\n"+sb.toString()).getBytes());
 			bos.close();
 			fos.close();
-			if(file.length()>=10240000)
+			if(file.length()>=1024000)
 			{
 				
 				Thread thread = new Thread(new UploadWorker(file.getName(), file.getName()));
