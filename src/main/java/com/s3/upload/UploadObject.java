@@ -4,7 +4,7 @@ import java.io.File;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -15,7 +15,8 @@ public class UploadObject
 	
 	public void upload(String keyName, String uploadFileName)
 	{
-		AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
+		BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAJAYTXHNJU2UZ3E3A", "rib8E9gJvl84yap3xOqlDpWqgzPgVC0c+SeR8jxU");
+		AmazonS3 s3client = new AmazonS3Client(awsCreds);
         try 
         {
             System.out.println("Uploading a new object to S3 from a file\n");
