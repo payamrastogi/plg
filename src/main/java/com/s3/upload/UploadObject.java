@@ -15,7 +15,7 @@ public class UploadObject
 	
 	public void upload(String keyName, String uploadFileName)
 	{
-		BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAJAYTXHNJU2UZ3E3A", "rib8E9gJvl84yap3xOqlDpWqgzPgVC0c+SeR8jxU");
+		BasicAWSCredentials awsCreds = new BasicAWSCredentials("<access_key>", "<secret_key>");
 		AmazonS3 s3client = new AmazonS3Client(awsCreds);
         try 
         {
