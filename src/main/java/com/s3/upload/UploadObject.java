@@ -11,7 +11,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 
 public class UploadObject 
 {
-	private static String bucketName = "tweet-payamrastogi";
+	private static String bucketName = "assignment3cloud";
 	
 	public void upload(String keyName, String uploadFileName)
 	{

@@ -4,6 +4,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import com.twitter.fetch.TweetsData;
 
+import twitter4j.FilterQuery;
 import twitter4j.StallWarning;
 import twitter4j.Status;
 import twitter4j.StatusDeletionNotice;
@@ -16,6 +17,7 @@ import twitter4j.conf.ConfigurationBuilder;
 public final class TweetsGet 
 {
 	LinkedBlockingQueue<TweetsData> queue;
+	String[] keywords = {"#Salman", "#Bail4SalmanNot4Saints","#SalmanGuilty"};
 	
 	public TweetsGet(LinkedBlockingQueue<TweetsData> queue)
 	{
@@ -83,7 +85,10 @@ public final class TweetsGet
                 ex.printStackTrace();
             }
         };
+        FilterQuery fq = new FilterQuery();
+        fq.track(keywords);
         twitterStream.addListener(listener);
-        twitterStream.sample();
+        twitterStream.filter(fq);
     }
+    
 }
